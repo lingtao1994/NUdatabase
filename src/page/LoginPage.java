@@ -28,7 +28,7 @@ public class LoginPage {
             boolean bool = new StudentsDao().logIn(loginInfo);
             if(bool){
                 //*********jump to the menuPage**********
-                MenuPage.MenuPage();
+                MenuPage.MenuPage(loginInfo);
 
             }else{
                 System.err.println("wrong id or password");
