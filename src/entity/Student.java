@@ -4,22 +4,22 @@ package entity;
  * Created by LT on 2018/11/12
  */
 public class Student {
-    private String id;
+    private int id;
     private String name;
     private String password;
     private String address;
 
-    public Student(String id, String password) {
+    public Student(int id, String password) {
         this.id = id;
         this.password = password;
     }
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

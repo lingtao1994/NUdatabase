@@ -5,7 +5,7 @@ package entity;
  */
 public class UosOffering {
 
-    private int uosCode;
+    private String uosCode;
     private String semester;
     private int year;
     private String textBook;
@@ -13,7 +13,7 @@ public class UosOffering {
     private int maxEnrollment;
     private int instructorId;
 
-    public UosOffering(int uosCode, String semester, int year, String textBook, int enrollment, int maxEnrollment, int instructorId) {
+    public UosOffering(String uosCode, String semester, int year, String textBook, int enrollment, int maxEnrollment, int instructorId) {
         this.uosCode = uosCode;
         this.semester = semester;
         this.year = year;
@@ -23,11 +23,15 @@ public class UosOffering {
         this.instructorId = instructorId;
     }
 
-    public int getUosCode() {
+    public String getUosCode() {
         return uosCode;
     }
 
-    public void setUosCode(int uosCode) {
+    public UosOffering(String uosCode) {
+        this.uosCode = uosCode;
+    }
+
+    public void setUosCode(String uosCode) {
         this.uosCode = uosCode;
     }
 

@@ -50,4 +50,30 @@ public class DbClose {
             e.printStackTrace();
         }
     }
+
+    public static void transClose(Connection conn, CallableStatement cstmt, ResultSet rs){
+        try{
+            if(conn != null){
+                conn.close();;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        try{
+            if(cstmt != null){
+                cstmt.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        try{
+            if(rs != null){
+                rs.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

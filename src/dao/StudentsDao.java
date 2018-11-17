@@ -25,7 +25,7 @@ public class StudentsDao {
         try{
             conn = DbConn.getconn();
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, logInInfo.getId());
+            pstmt.setInt(1, logInInfo.getId());
             password = pstmt.executeQuery();
             if(!password.next()){
                 bool  = false;
@@ -55,7 +55,7 @@ public class StudentsDao {
         try{
             conn = DbConn.getconn();
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, logInInfo.getId());
+            pstmt.setInt(1, logInInfo.getId());
             rs = pstmt.executeQuery();
             while(rs.next()){
                 System.out.println(rs.getString("id"));
@@ -85,7 +85,7 @@ public class StudentsDao {
                         conn = DbConn.getconn();
                         pstmt = conn.prepareStatement(sqlPW);
                         pstmt.setString(1, newInfo.getPassword());
-                        pstmt.setString(2, newInfo.getId());
+                        pstmt.setInt(2, newInfo.getId());
 
                         int rs = pstmt.executeUpdate();
                         if(rs > 0){
@@ -103,7 +103,7 @@ public class StudentsDao {
                         conn = DbConn.getconn();
                         pstmt = conn.prepareStatement(sqlAdd);
                         pstmt.setString(1, newInfo.getAddress());
-                        pstmt.setString(2, newInfo.getId());
+                        pstmt.setInt(2, newInfo.getId());
                         int rs2 = pstmt.executeUpdate();
                         if(rs2 > 0){
                             bool = true;

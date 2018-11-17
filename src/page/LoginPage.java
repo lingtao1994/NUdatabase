@@ -19,7 +19,8 @@ public class LoginPage {
         do{
             Scanner input = new Scanner(System.in);
             System.out.println("Please enter username\n");
-            String inUserName = input.next();
+            String UserName = input.next();
+            int inUserName = Integer.parseInt(UserName);
             System.out.println("Please enter password\n");
             String inPassWord = input.next();
 
@@ -28,7 +29,7 @@ public class LoginPage {
             boolean bool = new StudentsDao().logIn(loginInfo);
             if(bool){
                 //*********jump to the menuPage**********
-                MenuPage.MenuPage();
+                //MenuPage.MenuPage(loginInfo);
 
             }else{
                 System.err.println("wrong id or password");
